@@ -43,6 +43,8 @@ General compilation instructions
 
 TL;DR: `./configure && make (&& make install)` for the C++ library, and then `cd python; make && make install` for the python interface.
 
+Make sure you have the necessary compiler requirements installed (see Supported Platforms below).
+
 1. `./configure`
 
 This generates the system-dependent configuration for the `Makefile`, stored in
@@ -68,20 +70,23 @@ This installs the headers and libraries.
 
 4. `make -C python` (or `make py`)
 
-This builds the python interface.
+This builds the python interface. Requires Swig (can be installed on MacOS as `brew install swig@3`).
 
 5. `make -C python install`
 
 This installs the python library.
 
 
-Faiss is supported on x86_64 machines on Linux and Mac OS. 
-It has been found to run on other platforms as well, see [other platforms](https://github.com/facebookresearch/faiss/wiki/Related-projects#bindings-to-other-languages-and-porting-to-other-platforms)
+Supported Platforms
+-----------
+
+Faiss is supported on x86_64 machines on Linux and Mac OS.
+It has been found to run on other platforms as well, see [other platforms](https://github.com/facebookresearch/faiss/wiki/Related-projects#bindings-to-other-languages-and-porting-to-other-platforms).
 
 Faiss requires a C++ compiler that understands:
 - the Intel intrinsics for SSE instructions,
 - the GCC intrinsic for the popcount instruction,
-- basic OpenMP.
+- basic OpenMP (can be installed on MacOS as `brew install libomp`)
 
 There are a few examples for makefile.inc in the example_makefiles/
 subdirectory. There are also indications for specific configurations in the

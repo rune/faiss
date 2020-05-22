@@ -1,0 +1,11 @@
+{
+    "pythonVersion": "3.7",
+    "executionEnvironments": [
+        {
+            "root": "./python",
+            "extraPaths": [
+                "./python/"
+            ]
+        }
+    ]
+}

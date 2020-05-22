@@ -1,0 +1,6 @@
+{
+    "python.pythonPath": "/usr/local/anaconda3/envs/faiss/bin/python",
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": false,
+    "python.envFile": "${workspaceFolder}/.env"
+}

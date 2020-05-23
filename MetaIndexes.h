@@ -34,6 +34,8 @@ struct IndexIDMapTemplate : IndexT {
     /// @param xids if non-null, ids to store for the vectors (size n)
     void add_with_ids(idx_t n, const component_t* x, const idx_t* xids) override;
 
+    void get_ids(idx_t* result);
+
     /// this will fail. Use add_with_ids
     void add(idx_t n, const component_t* x) override;
 

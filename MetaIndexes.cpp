@@ -68,6 +68,13 @@ void IndexIDMapTemplate<IndexT>::reset ()
 
 
 template <typename IndexT>
+void IndexIDMapTemplate<IndexT>::get_ids(typename IndexT::idx_t* result)
+{
+    std::copy(id_map.begin(), id_map.end(), result);
+}
+
+
+template <typename IndexT>
 void IndexIDMapTemplate<IndexT>::add_with_ids
     (idx_t n, const typename IndexT::component_t * x,
      const typename IndexT::idx_t *xids)

@@ -248,6 +248,15 @@ def handle_Index(the_class):
     replace_method(the_class, 'sa_encode', replacement_sa_encode)
     replace_method(the_class, 'sa_decode', replacement_sa_decode)
 
+def handle_IndexIDMap(the_class):
+
+    def replacement_get_ids(self):
+        ids = np.empty((self.ntotal), dtype=np.int64)
+        self.get_ids_c(swig_ptr(ids))
+        return ids
+
+    replace_method(the_class, 'get_ids', replacement_get_ids)
+
 def handle_IndexBinary(the_class):
 
     def replacement_add(self, x):
@@ -391,6 +400,9 @@ for symbol in dir(this_module):
         the_class = obj
         if issubclass(the_class, Index):
             handle_Index(the_class)
+
+        if issubclass(the_class, IndexIDMap):
+            handle_IndexIDMap(the_class)
 
         if issubclass(the_class, IndexBinary):
             handle_IndexBinary(the_class)

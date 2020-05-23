@@ -16,4 +16,9 @@
 /c_api/gpu/bin/
 /tests/test
 /tests/gtest/
-python/
+
+# Ignore build artifacts
+python/faiss
+python/build
+python/swigfaiss.*
+depend
